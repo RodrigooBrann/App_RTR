@@ -1,0 +1,17 @@
+.background-image {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* Adicione mais estilo para inputs, botões, etc. */
