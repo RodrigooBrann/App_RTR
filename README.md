@@ -1,10 +1,10 @@
 # Relatórios Inteligentes
 Criação de relatorios de trabalho offline
-## 1ªFase
+## 1ªFase ( não iniciado)
   login
   Criar banco de dados para o Login
   Envio para Central
-## 2ªFase
+## 2ªFase (Iniciado)
     Entradas:
       Propriedade
       Proprietario
