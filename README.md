@@ -1,5 +1,9 @@
 # Relatórios Inteligentes
-Criação de relatorios de trabalho offline
+
+Criação de relatorios de trabalho offline que quando sincronizado com a web recebera um tratamento de gerador de texto e tratará as sentensas deixando de uma forma mais
+apresentada e organizada. Organizando todo em banco de dados, possibilitando a geração de arquivos em varios formatos e compartilhavel. Inicialmente pensado para prestação
+de serviço de consultoria agronômica mais podendo ser adptado a qualquer trabalho de prestação de serviço. A construção do aplicativo será dividido em fases, a principio e para o desafio será a fase de elaboração do relatorio. 
+
 ## 1ªFase ( não iniciado)
   login
   Criar banco de dados para o Login
