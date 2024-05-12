@@ -1,0 +1,163 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url("background.jpg");
+    background-size: cover;
+    background-attachment: fixed; 
+    margin: 0;
+}
+
+.container {
+    max-width: 960px;
+    margin: 30px auto; 
+    padding: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5); 
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px; 
+}
+
+header {
+    background-color: transparent;
+    padding: 20px 0;
+    text-align: center; 
+}
+
+h1 {
+    color: #337ab7;
+    font-size: 3em; 
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    animation: float 4s ease-in-out infinite; 
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.chatbox {
+    width: 60%;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+}
+
+.chat-logs {
+    height: 300px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-item { 
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px; 
+    transition: all 0.3s ease; 
+}
+
+.chat-item.active {
+    transform: translateY(-50%);
+}
+
+.pergunta, 
+.resposta { 
+    background-color: #eee;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 5px;
+    max-width: 70%;
+    word-break: break-word;
+}
+
+.pergunta {
+    background-color: #f0f0f5;
+    font-weight: bold;
+    align-self: flex-end;
+}
+
+.resposta {
+    background-color: #ccf;
+    align-self: flex-start;
+    display: flex;
+    align-items: center; 
+}
+
+.resposta img {
+    max-width: 50px; 
+    max-height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+#widgets {
+    margin-top: 20px;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+}
+
+#imageUploadWidget, #pdfWidget {
+    display: none; 
+    margin-top: 20px; 
+    text-align: center; 
+    width: 80%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px; 
+}
+
+#imageUploadWidget input[type="file"],
+#imageUploadWidget input[type="text"],
+#pdfWidget button {
+    display: block;
+    width: 100%; 
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#imageUploadWidget input[type="file"] {
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #28a745; 
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.input-area {
+    display: flex;
+    margin-top: 10px;
+}
+
+.input-area input[type="text"] {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.input-area button {
+    padding: 10px;
+    background-color: #28a745; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+} 
