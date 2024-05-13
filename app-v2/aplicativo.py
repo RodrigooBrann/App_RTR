@@ -6,6 +6,7 @@ import os
 import speech_recognition as sr
 from google.api_core.client_options import ClientOptions
 from google.cloud import aiplatform_v1beta1 as aiplatform
+import google.generativeai as genai
 import config # Importe o arquivo de configurações
 
 # Carregar as configurações do arquivo config.py
@@ -15,6 +16,24 @@ mysql_config = {
     'user': config.MYSQL_USER,
     'password': config.MYSQL_PASSWORD
 }
+
+## Configuração Genai
+genai.configure(api_key=config.GOOGLE_API_KEY)
+generation_config = {
+    "candidate_count": 1,
+    "temperature": 0.5,
+}
+
+safety_settings = {
+    "HARASSMENT": "BLOCK_NONE",
+    "HATE": "BLOCK_NONE",
+    "SEXUAL": "BLOCK_NONE",
+    "DANGEROUS": "BLOCK_NONE",
+}
+model = genai.GenerativeModel(model_name="gemini-1.0-pro",
+                              generation_config = generation_config,
+                              safety_settings = safety_settings)
+
 
 # *** Funções para Transcrição e Regeneração ***
 arquivos = []
@@ -26,6 +45,7 @@ def transcrever_audio(audio_file):
         audio = r.record(source)
     try:
         texto = r.recognize_google(audio, language='pt-BR')
+        texto = model.generate_content(texto)
         print("Transcrição do áudio: " + texto)
         return texto
     except sr.UnknownValueError:
